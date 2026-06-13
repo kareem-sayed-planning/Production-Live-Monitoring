@@ -1,6 +1,6 @@
 # 🏭 Production Live Monitoring System
 
-![Live Monitoring Dashboard](Live%20monitoring.jpg)
+![Live Monitoring Dashboard](Live%20monitoring.png)
 
 ## 📝 Overview
 A real-time production tracking dashboard developed to monitor manufacturing operations across all major shop floors. Designed with Modern UI and Flat Design principles, this system provides management with instant visibility into actual production volumes versus planned targets, ensuring rapid response to operational bottlenecks.
