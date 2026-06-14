@@ -1,0 +1,19 @@
+=LET(
+    Shops, $AX$65:$BA$65,
+    Vars, ROUND($AX$68:$BA$68, 0),
+
+    AllStatuses, MAP(Shops, Vars, LAMBDA(ShopName,ShopVar,
+        LET(
+            Loss, IF(ShopVar < 0, ABS(ShopVar), 0),
+            IFS(
+                Loss = 0, "",
+                Loss <= 3, "⚠️ WARNING AT : " & ShopName,
+                TRUE, "🚨 MAJOR ISSUE AT : " & ShopName
+            )
+        )
+    )),
+
+    IssuesOnly, FILTER(AllStatuses, AllStatuses <> "", ""),
+    FinalOutput, IFERROR(EXPAND(IssuesOnly, 1, 4, ""), {"","","",""}),
+    FinalOutput
+)
